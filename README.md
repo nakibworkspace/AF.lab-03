@@ -23,7 +23,7 @@ In this experiment, we’ll try to integrate the S3 bucket with Apache Airflow a
 
 Amazon Simple Storage Service (S3) is **a massively scalable storage service based on object storage technology**. It provides a very high level of durability, with high availability and high performance. Data can be accessed from anywhere via the Internet, through the Amazon Console and the powerful S3 API.
 
-![s3 Diagram.drawio.svg](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/s3_Diagram.drawio.svg)
+![s3 Diagram.drawio.svg](Screenshots/Airflowlab3.svg)
 
 To integrate S3 with Apache Airflow, you'll need to set up Airflow to interact with S3 buckets. Here's a step-by-step tutorial to help you achieve this:
 
@@ -83,7 +83,7 @@ brew install awscli
     
 - For ACCESS_KEY & SECRET_ACCESS_KEY, you can generate them from **Poridhi Lab** for the purpose given later.
 
-![Screenshot 2024-10-13 at 6.05.48 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_6.05.48_PM.png)
+![images.png](Screenshots/image-01.png)
 
 ## Step 03: Setting up the connection in Apache Airflow GUI:
 
@@ -93,7 +93,7 @@ brew install awscli
 
 - Fill this as following. For the Access key and Secret Access Key, put the generated credentials.
 
-![Screenshot 2024-10-13 at 6.14.11 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_6.14.11_PM.png)
+![images.png](Screenshots/image-02.png)
 
 ## Step 04: VSCode environment setup
 
@@ -158,7 +158,7 @@ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 
 - Modify the docker-compose.yaml file:
     
-    ![Screenshot 2024-10-13 at 5.51.30 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_5.51.30_PM.png)
+    ![images.png](Screenshots/image-03.png)
     
 
 Make these changes :
@@ -242,7 +242,7 @@ This DAG will
 docker-compose up —-build
 ```
 
-![Screenshot 2024-11-21 at 2.00.57 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-11-21_at_2.00.57_PM.png)
+![images.png](Screenshots/image-04.png)
 
 ```python
 docker-compose up -d
@@ -250,42 +250,42 @@ docker-compose up -d
 
 ## Step 05: Launch the Airflow GUI using the Load Balancer.
 
-![Screenshot 2024-11-20 at 8.47.51 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-11-20_at_8.47.51_PM.png)
+![images.png](Screenshots/image-05.png)
 
-![Screenshot 2024-11-20 at 8.48.41 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-11-20_at_8.48.41_PM.png)
+![images.png](Screenshots/image-06.png)
 
-![Screenshot 2024-11-20 at 8.49.13 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-11-20_at_8.49.13_PM.png)
+![images.png](Screenshots/image-07.png)
 
 - Access the Airflow web and login with the username and password.
     
-    ![Screenshot 2024-10-13 at 10.46.43 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_10.46.43_PM.png)
+    ![images.png](Screenshots/image-08.png)
     
 
 - You might see this view first, all are example DAGs.
     
-    ![Screenshot 2024-10-13 at 1.47.07 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/626cf385-81bf-4827-bc9f-6d85e170a03b.png)
+    ![images.png](Screenshots/image-09.png)
     
 
 - To remove these example DAG files, go to the yaml file and change this from true → false.
     
-    ![Screenshot 2024-10-13 at 10.48.22 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_10.48.22_PM.png)
+    ![images.png](Screenshots/image-10.png)
     
 
 - After refreshing the DAG dashboard will look like this.
     
-    ![Screenshot 2024-10-13 at 10.41.23 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_10.41.23_PM.png)
+    ![images.png](Screenshots/image-11.png)
     
 
 - Enable and trigger your DAG execution from the Airflow UI and monitor it.
 - The possible output :
 
-![Screenshot 2024-10-13 at 10.39.01 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/3b1bb27b-8f7f-4f56-b39a-a059b419c3c8.png)
+![images.png](Screenshots/image-12.png)
 
-![Screenshot 2024-10-13 at 10.39.24 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_10.39.24_PM.png)
+![images.png](Screenshots/image-13.png)
 
 - The grid view:
     
-    ![Screenshot 2024-10-13 at 10.39.42 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_10.39.42_PM.png)
+    ![images.png](Screenshots/image-14.png)
     
 
 - To stop the Docker container, use this command:
@@ -304,7 +304,7 @@ docker exec -it s3airflow-airflow-webserver-1 airflow users list
 
 likely to be get an output like this:
 
-![Screenshot 2024-10-13 at 7.05.17 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_7.05.17_PM.png)
+![images.png](Screenshots/image-15.png)
 
 If not, then your account creation wasn’t right. Create using the code previously given.
 
@@ -323,12 +323,12 @@ docker-compose up -d
 
 ### Issue 02: **After your DAG showed up in dashboard but you can’t trigger this and get this message.**
 
-![Screenshot 2024-10-13 at 1.48.50 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_1.48.50_PM.png)
+![images.png](Screenshots/Screenshot_2024-10-13_at_1.48.50_PM.png)
 
 - Check if the DAG file is in the dags folder.
 - The file name must match the dag_id on your dag file.
     
-    ![Screenshot 2024-10-13 at 6.53.48 PM.png](Integration%20of%20S3%20with%20Apache%20Airflow%20145d4718bce880c5aaf0eafcb28df158/Screenshot_2024-10-13_at_6.53.48_PM.png)
+    ![images.png](Screenshots/image-16.png)
     
 - Then try running this command on your terminal
 
